@@ -4,8 +4,8 @@ import random
 turtle_module.colormode(255)
 tim = turtle_module.Turtle()
 rgb_list = [(241, 239, 235), (200, 157, 125), (141, 87, 66), (232, 239, 233), (51, 98, 127), (240, 232, 234), (230, 216, 97), (136, 173, 155), (63, 109, 85), (125, 162, 188), (167, 47, 59), (226, 232, 237), (193, 162, 172), (192, 99, 73), (138, 31, 39), (148, 154, 80), (35, 52, 65), (101, 153, 96), (210, 180, 189), (152, 113, 125), (178, 199, 182), (22, 62, 112), (218, 180, 172), (129, 40, 38), (51, 68, 74), (45, 44, 43), (56, 38, 42), (92, 146, 150), (55, 62, 61), (99, 129, 161), (51, 73, 65), (175, 192, 211), (175, 199, 203)]
-tim.penup()
-tim.hideturtle()
+#tim.penup()
+#tim.hideturtle()
 tim.speed("fastest")
 
 tim.setheading(225)
@@ -15,15 +15,15 @@ number_of_dots = 100
 
 
 for dot_count in range(1, number_of_dots + 1):
-    tim.dot(20, random.choice(rgb_list))
-    tim.forward(50)
-
+    tim.dot(20, random.choice(rgb_list)) #selects random color from palette
+    tim.forward(50)                     #makes a dot.  goes forward 50.  makes another dot.
+    #This makes sure that if the dot count is 10, a new row will be set up
     if dot_count % 10 == 0:
-        tim.setheading(90)
-        tim.forward(50)
-        tim.setheading(180)
-        tim.forward(500)
-        tim.setheading(0)
+        tim.setheading(90)  #makes cursor face upwards
+        tim.forward(50)     #brings cursor up one row
+        tim.setheading(180) #changes direction so cursor faces left
+        tim.forward(500)    #goes all the way to left of the margin
+        tim.setheading(0)   #sets cursor facing right
 
 
 
